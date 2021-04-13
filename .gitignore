@@ -1,0 +1,7 @@
+# CDCommands-JS
+CDCommands-JS/node_modules/
+CDCommands-JS/.env
+
+# CDCommands-TS
+CDCommands-TS/node_modules/
+CDCommands-TS/.env
