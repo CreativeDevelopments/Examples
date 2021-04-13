@@ -1,7 +1,8 @@
 import colour from "cdcolours";
+import { config } from "dotenv";
 import { Client } from "discord.js";
 import { CDCommands } from "cdcommands";
-require("dotenv").config();
+config();
 
 const client = new Client();
 
