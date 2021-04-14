@@ -1,42 +1,55 @@
 import { Command } from "cdcommands";
+
 export default new Command({
   name: "ban",
-  category: "Moderation",
+  aliases: [],
   description: "Bans a member.",
   details: "A member goes bye bye.",
   minArgs: 1,
-  usage: "{prefix}ban <member @> [reason]",
-  aliases: [],
-  botPermissions: ["SEND_MESSAGES", "BAN_MEMBERS"],
   maxArgs: Infinity,
-  cooldown: 5000,
-  devOnly: false,
-  dmOnly: false,
-  globalCooldown: 5000,
+  usage: "{prefix}ban <member @> [reason]",
   guildOnly: true,
-  userPermissions: ["SEND_MESSAGES", "BAN_MEMBERS"],
+  dmOnly: false,
+  devOnly: false,
   testOnly: false,
   nsfw: false,
+  cooldown: 5000,
+  globalCooldown: 0,
+  userPermissions: ["SEND_MESSAGES", "BAN_MEMBERS"],
+  botPermissions: ["SEND_MESSAGES", "BAN_MEMBERS"],
+  category: "Moderation",
   run: async ({ message, args, client }) => {
-    const member =
-      message.mentions.members?.first() ||
-      message.guild?.members.cache.get(args[0]);
-    if (!member) {
+    const member = message.mentions.members?.first() || message.guild?.members.cache.get(args[0]);
+    if (!member)
       return message.reply(`Please specify a member.`);
-    }
-
-    if (member.id === message.author.id) {
+  
+    if (member.id === message.author.id)
       return message.reply(`Please specify a person other then **yourself.**`);
-    }
 
+    if (!member.bannable)
+      return message.reply(`I canno't ban ${member.user.tag}!`);
+  
     args.shift();
-    let reason = args.join(" ") || `No reason provided.`;
+    let reason = args?.join(" ") || `No reason provided.`;
 
-    if (member.bannable) {
-      member.ban({ reason: reason });
-      client.success({ msg: message, data: `${member.user.tag} was banned!` })
-    } else {
-      client.error({ msg: message, data: `I couldn't ban ${member.user.tag}` });
+    try {
+      member.ban({ reason, });
+    } catch(err) {
+      message.channel
+        .send("", {
+          embed: client.error({
+            msg: message,
+            data: `Failed to ban ${member.user.tag}`
+          })
+      });
     }
+
+    message.channel
+      .send("", {
+        embed: client.success({
+          msg: message,
+          data: `Successfully banned ${member.user.tag}!`
+        })
+      });
   },
 });

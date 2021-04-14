@@ -1,7 +1,7 @@
-import { Event } from 'cdcommands'
-import { CDClient } from 'cdcommands/src/types/helper.types'
-import { GuildMember } from 'discord.js'
+import { Event } from 'cdcommands';
+import { GuildMember } from 'discord.js';
+import { CDClient } from 'cdcommands/src/types/helper.types';
 
 export default new Event('guildMemberAdd', (client: CDClient, member: GuildMember) => {
-    console.log(`It seems that ` + member.user?.tag + ` Has joined a server.`)
+    client.logInfo({ data: `It seems that ${member.user?.tag} has joined a server!` });
 })
