@@ -5,3 +5,4 @@ CDCommands-JS/.env
 # CDCommands-TS
 CDCommands-TS/node_modules/
 CDCommands-TS/.env
+CDCommands-TS/package-lock.json

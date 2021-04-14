@@ -1,0 +1,11 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "message.json",
+        "messages.json"
+      ],
+      "url": "./node_modules/cdcommands/src/Base/json-schema/message.json"
+    }
+  ]
+}

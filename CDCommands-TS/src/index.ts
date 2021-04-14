@@ -1,8 +1,8 @@
 import colour from "cdcolours";
-import { config } from "dotenv";
 import { Client } from "discord.js";
 import { CDCommands } from "cdcommands";
-config();
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const client = new Client();
 
@@ -11,17 +11,19 @@ client.on("ready", () => {
     commandsDir: "commands",
     eventsDir: "events",
     featuresDir: "features",
-    MessageJSONPath: "message.json",
     testServers: [],
     devs: [],
     defaultPrefix: "!",
-    mongoURI: process.env.MONGO_URI,
+    mongoURI: `${process.env.MONGO_URI}`,
     cacheUpdateSpeed: 60000 * 5,
     disabledDefaultCommands: [],
-    customMessageEvent: true,
+    customMessageEvent: false,
   });
 
-  console.log(colour("[READY]", { textColour: "green" }) + ` ${client.user.tag} has logged in!`);
+  console.log(
+    colour("[READY]", { textColour: "green" }) +
+      ` ${client.user?.tag} has logged in!`
+  );
 });
 
 client.login(process.env.TOKEN);

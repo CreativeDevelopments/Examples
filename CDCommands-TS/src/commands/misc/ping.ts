@@ -1,1 +1,24 @@
-import { Command } from "cdcommands";
+import { Command } from 'cdcommands';
+
+export default new Command({
+    name: 'ping',
+    aliases: [],
+    description: 'Pong?',
+    details: 'Gets the bot latency.',
+    minArgs: 0,
+    maxArgs: Infinity,
+    usage: '{prefix}ping',
+    guildOnly: true,
+    dmOnly: false,
+    devOnly: false,
+    testOnly: false,
+    nsfw: false,
+    cooldown: 5000,
+    globalCooldown: 0,
+    userPermissions: ['SEND_MESSAGES'],
+    botPermissions: ['SEND_MESSAGES'],
+    category: 'Misc',
+    run: async ({ message, args, client, prefix, language }) => {
+        message.channel.send(`Pong! \`${client.ws.ping}ms\``);
+    }
+})
