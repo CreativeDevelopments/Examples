@@ -18,7 +18,7 @@ export default new Command({
     userPermissions: ['SEND_MESSAGES'],
     botPermissions: ['SEND_MESSAGES'],
     category: 'Misc',
-    run: async ({ message, args, client, prefix, language }) => {
+    run: async ({ message, client }) => {
         message.channel.send(`Pong! \`${client.ws.ping}ms\``);
     }
 })

@@ -29,8 +29,7 @@ export default new Command({
     if (!member.bannable)
       return message.reply(`I canno't ban ${member.user.tag}!`);
   
-    args.shift();
-    let reason = args?.join(" ") || `No reason provided.`;
+    const reason = args[1] ? args.slice(1).join(' ') : 'No reason provided';
 
     try {
       member.ban({ reason, });
