@@ -14,6 +14,33 @@ module.exports = new Event("message", async (client, message) => {
       : client.defaultPrefix
     : client.defaultPrefix;
 
+  /**
+   * In here we have our default message.js file. We will be putting
+   * any custom stuff we want above where we start listening for commands.
+   * NOTE - You should try avoid using "return" since it may stop
+   * commands from registering.
+   * 
+   * Example:
+   * Instead of doing "if (message.channel.id !== 'SomeID') return;"
+   * Do this "if (message.channel.id === 'SomeID') { Do this code }"
+   * 
+   * Below we are going to make a simple thing just to listen for when
+   * the bot gets pinged and respond with the prefix. Prefix has already
+   * been defined at the top for us.
+   */
+
+  if (message.content.startsWith(`<@${client.user.id}>`) ||
+    message.content.startsWith(`<@!${client.user.id}>`) &&
+    !message.author.bot
+  )
+    message.channel
+      .send("", {
+        embed: client.info({
+          msg: message,
+          data: `My prefix for this guild is \`${prefix}\``
+        })
+      });
+
   const args = message.content.trim().slice(prefix.length).split(/ +/g);
   const commandName = args.shift().toLowerCase();
 
