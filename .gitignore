@@ -1,8 +1,18 @@
-# CDCommands-JS
-CDCommands-JS/node_modules/
-CDCommands-JS/.env
+# CDCommands
+CDCommands/JavaScript/node_modules/
+CDCommands/JavaScript/.env
+CDCommands/JavaScript/package-lock.json
+CDCommands/TypeScript/node_modules/
+CDCommands/TypeScript/.env
+CDCommands/TypeScript/package-lock.json
 
-# CDCommands-TS
-CDCommands-TS/node_modules/
-CDCommands-TS/.env
-CDCommands-TS/package-lock.json
+# CDHandler
+CDHandler/CoffeeScript/node_modules/
+CDHandler/CoffeeScript/.env
+CDHandler/CoffeeScript/package-lock.json
+CDHandler/JavaScript/node_modules/
+CDHandler/JavaScript/.env
+CDHandler/JavaScript/package-lock.json
+CDHandler/TypeScript/node_modules/
+CDHandler/TypeScript/.env
+CDHandler/TypeScript/package-lock.json

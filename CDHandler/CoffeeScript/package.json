@@ -1,0 +1,29 @@
+{
+  "name": "cdhandler-cs",
+  "version": "1.0.0",
+  "description": "An example CoffeeScript Discord bot using CDHandler",
+  "main": "src/index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreativeDevelopments/Examples.git"
+  },
+  "keywords": [
+    "CDHandler",
+    "CoffeeScript"
+  ],
+  "author": "CreativeDevelopments",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CreativeDevelopments/Examples/issues"
+  },
+  "homepage": "https://github.com/CreativeDevelopments/Examples#readme",
+  "dependencies": {
+    "cdcolours": "^1.0.4",
+    "cdhandler": "^1.4.2",
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0"
+  }
+}
