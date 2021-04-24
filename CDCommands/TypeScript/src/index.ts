@@ -11,6 +11,7 @@ client.on("ready", () => {
     commandsDir: "commands",
     eventsDir: "events",
     featuresDir: "features",
+    MessageJSONPath: "message.json",
     testServers: [],
     devs: [],
     defaultPrefix: "!",

@@ -8,21 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CreativeDevelopments/CDCommands-Examples.git"
+    "url": "git+https://github.com/CreativeDevelopments/Examples.git"
   },
   "keywords": [
     "CDCommands",
     "TypeScript"
   ],
-  "author": "Exxon#0293",
+  "author": "CreativeDevelopments",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/CreativeDevelopments/CDCommands-Examples/issues"
+    "url": "https://github.com/CreativeDevelopments/Examples/issues"
   },
-  "homepage": "https://github.com/CreativeDevelopments/CDCommands-Examples#readme",
+  "homepage": "https://github.com/CreativeDevelopments/Examples#readme",
   "dependencies": {
-    "cdcolours": "^1.0.4",
-    "cdcommands": "^4.1.0",
+    "cdcolours": "^2.1.0",
+    "cdcommands": "^4.1.2",
     "discord.js": "^12.5.3",
     "dotenv": "^8.2.0"
   }
