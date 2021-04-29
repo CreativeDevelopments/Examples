@@ -13,7 +13,7 @@ client.on('ready', async () => {
     prefix: "!",
     category: "Misc",
     pingReply: true,
-    devs: [],
+    devs: ["631632832992903168", "811657485462274129"],
     defaults: true,
     mongo: process.env.MONGO_URI,
     warnings: true,

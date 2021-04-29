@@ -1,27 +1,23 @@
-// File Name - index.js
-
-// You'll need to update this as well, use dotenv.
-
 import colour from "cdcolours";
-import * as Discord from "discord.js";
+import { Client } from "discord.js";
 import { CDHandler } from "cdhandler";
 import { config as dotenv } from "dotenv";
 dotenv();
 
-const client = new Discord.Client();
+const client = new Client();
 
 client.on("ready", () => {
   new CDHandler(client, {
-    commandsDir: "commands", // String - commands directory
-    eventsDir: "events", // String - events directory
-    featuresDir: "features", // String - features directory
+    commandsDir: "commands",
+    eventsDir: "events", 
+    featuresDir: "features",
     prefix: "!",
-    category: "Misc", // String - Default category for commands
-    pingReply: true, // Boolean - If you want the bot to reply with it's prefix when it gets pinged
-    devs: [], // Array - Bot Developer ID's for devOnly commands.
-    defaults: true, // Boolean - active default commands
-    mongo: "Your MongoPath", // String - Connects to MongoDB
-    warnings: true, // Boolean - active CDHandler warnings
+    category: "Misc",
+    pingReply: true,
+    devs: ["631632832992903168", "811657485462274129"],
+    defaults: true,
+    mongo: process.env.MONGO_URI, 
+    warnings: true,
   });
 
   console.log(
@@ -29,5 +25,5 @@ client.on("ready", () => {
       ` Successfully logged in as ${client.user!.tag}`,
   );
 });
-// You can get your token by making an application at discord.dev/applications.
-client.login("BOT_TOKEN");
+
+client.login(process.env.TOKEN);
