@@ -1,0 +1,7 @@
+{
+    "commands": "commands",
+    "events": "events",
+    "features": "features",
+    "handler": "cdcommands",
+    "language": "ts"
+}
