@@ -1,3 +1,9 @@
+# CDColours
+CDColours/JavaScript/node_modules/
+CDColours/JavaScript/package-lock.json
+CDColours/TypeScript/node_modules/
+CDColours/TypeScript/package-lock.json
+
 # CDCommands
 CDCommands/JavaScript/node_modules/
 CDCommands/JavaScript/.env

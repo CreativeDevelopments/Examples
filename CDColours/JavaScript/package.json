@@ -1,0 +1,26 @@
+{
+  "name": "cdcolours-js",
+  "version": "1.0.0",
+  "description": "An example of using CDColours in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreativeDevelopments/Examples.git"
+  },
+  "keywords": [
+    "CDColours",
+    "JavaScript"
+  ],
+  "author": "CreativeDevelopments",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CreativeDevelopments/Examples/issues"
+  },
+  "homepage": "https://github.com/CreativeDevelopments/Examples#readme",
+  "dependencies": {
+    "cdcolours": "^2.1.2"
+  }
+}
